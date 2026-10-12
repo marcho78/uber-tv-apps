@@ -49,10 +49,23 @@ git add -A && git commit -m "…" && git push
 ```
 
 `build` uses the guide's own `bin/om-pg-apps pack`, so an app that wouldn't
-install won't pack, and it reads the signed catalog back with the guide's key
-before it's done. Signing needs the private key (`~/.ssh/uber-tv-catalog`);
-keep it off this repo and give it a passphrase (`ssh-keygen -p -f
-~/.ssh/uber-tv-catalog`).
+install won't pack, and it reads the signed catalog back with the guide's keys
+before it's done. Signing needs a private key: `~/.ssh/uber-tv-catalog`, with
+a passphrase, never in this repo. Keep a copy of it somewhere safe (it's
+encrypted with the passphrase, so a password manager or a USB stick will do).
+
+**The keys.** The guide trusts two (`apps/catalog-signers` in the guide, public
+halves only): the one above, and a spare (`uber-tv-catalog-spare`) kept
+offline.
+
+- **Lost the key:** sign with the spare (`./build --key <the spare>`). Guides
+  already trust it; nothing else changes. Then make a new spare and add its
+  public half to the guide.
+- **Key stolen:** sign with the spare, and take the stolen key's line out of
+  the guide's `apps/catalog-signers` in its next release. A guide with that
+  release installs again, from the catalog signed with the spare, any app it
+  had installed under the stolen key. Until people update, the thief could
+  still sign catalogs their guides accept, so release quickly.
 
 **Updating an app:** change it, raise its `version`, build. A guide that has it
 installs the update by itself if it asks for nothing new; if it asks for more,
