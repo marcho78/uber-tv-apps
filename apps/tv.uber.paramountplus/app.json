@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.paramountplus",
+  "name": "Paramount+",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "CBS, Paramount movies and live sports. Opens Paramount+ full screen.",
+  "color": "#0064ff",
+  "launch": {
+    "web": "https://www.paramountplus.com/home/"
+  },
+  "permissions": {
+    "web": [
+      "paramountplus.com"
+    ]
+  }
+}

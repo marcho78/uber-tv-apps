@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.crunchyroll",
+  "name": "Crunchyroll",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Anime series and movies. Opens Crunchyroll full screen; you sign in there.",
+  "color": "#f47521",
+  "launch": {
+    "web": "https://www.crunchyroll.com/"
+  },
+  "permissions": {
+    "web": [
+      "crunchyroll.com"
+    ]
+  }
+}

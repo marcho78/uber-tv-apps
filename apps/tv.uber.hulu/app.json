@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.hulu",
+  "name": "Hulu",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Series, movies and live TV. Opens Hulu's website full screen; you sign in there.",
+  "color": "#1ce783",
+  "launch": {
+    "web": "https://www.hulu.com/hub/home"
+  },
+  "permissions": {
+    "web": [
+      "hulu.com"
+    ]
+  }
+}

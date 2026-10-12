@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.primevideo",
+  "name": "Prime Video",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Amazon's movies and series. Opens Prime Video full screen; you sign in there.",
+  "color": "#1a98ff",
+  "launch": {
+    "web": "https://www.primevideo.com/"
+  },
+  "permissions": {
+    "web": [
+      "primevideo.com"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+#!/usr/bin/env python3
+"""Builds the Uber TV catalog and signs it.
+
+    ./build [--key ~/.ssh/uber-tv-catalog] [--guide <the guide's folder>]
+
+Each folder in apps/ is packed by the guide's own bin/om-pg-apps (checked the
+way an install checks it, the same bytes every time) into packages/, its icon
+copied into icons/. catalog.json lists them with their SHA-256s, sizes and
+permissions, and what revoked.json pulls; then it's signed with the key
+(ssh-keygen -Y sign, namespace uber-tv-catalog) into catalog.json.sig. Last,
+the guide's own helper reads it back with the guide's key, as a guide would.
+
+To publish, commit and push all of it. To pull a bad app, add it to
+revoked.json ({"id", "version" or "*", "reason"}) and build again.
+"""
+
+import argparse
+import hashlib
+import json
+import os
+import shutil
+import subprocess
+import sys
+import tempfile
+import time
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+GUIDE = os.path.expanduser("~/.config/omarchy/plugins/marcho78.om-pg")
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Build and sign the Uber TV catalog")
+    ap.add_argument("--key", default=os.path.expanduser("~/.ssh/uber-tv-catalog"))
+    ap.add_argument("--guide", default=GUIDE)
+    args = ap.parse_args()
+    helper = os.path.join(args.guide, "bin", "om-pg-apps")
+    signers = os.path.join(args.guide, "apps", "catalog-signers")
+
+    os.chdir(HERE)
+    os.makedirs("packages", exist_ok=True)
+    os.makedirs("icons", exist_ok=True)
+    entries, keep = [], set()
+    for name in sorted(os.listdir("apps")):
+        folder = os.path.join("apps", name)
+        if not os.path.isfile(os.path.join(folder, "app.json")):
+            continue
+        with open(os.path.join(folder, "app.json")) as f:
+            m = json.load(f)
+        out = "packages/%s-%s.tar.gz" % (m.get("id"), m.get("version"))
+        r = subprocess.run([sys.executable, helper, "pack", folder, out], capture_output=True, text=True)
+        res = json.loads(r.stdout.strip().splitlines()[-1])
+        if not res.get("ok"):
+            sys.exit(folder + ": " + res.get("error", "couldn't pack it"))
+        entry = res["catalogEntry"]
+        entry["package"] = out
+        keep.add(out)
+        icon = res["manifest"].get("icon")
+        if icon:
+            dest = "icons/%s%s" % (entry["id"], os.path.splitext(icon)[1].lower())
+            shutil.copyfile(os.path.join(folder, icon), dest)
+            with open(dest, "rb") as f:
+                entry["iconSha256"] = hashlib.sha256(f.read()).hexdigest()
+            entry["icon"] = dest
+            keep.add(dest)
+        entries.append(entry)
+        print("packed", entry["id"], entry["version"])
+
+    for sub in ("packages", "icons"):
+        for f in os.listdir(sub):
+            if os.path.join(sub, f) not in keep:
+                os.unlink(os.path.join(sub, f))
+
+    with open("revoked.json") as f:
+        revoked = json.load(f)
+    before = 0
+    if os.path.exists("catalog.json"):
+        with open("catalog.json") as f:
+            before = json.load(f).get("updated", 0)
+    catalog = {"format": 1, "name": "The Uber TV catalog", "updated": max(int(time.time()), before + 1),
+               "apps": entries, "revoked": revoked}
+    with open("catalog.json", "w") as f:
+        json.dump(catalog, f, indent=1, sort_keys=True)
+        f.write("\n")
+    if os.path.exists("catalog.json.sig"):
+        os.unlink("catalog.json.sig")
+    subprocess.run(["ssh-keygen", "-q", "-Y", "sign", "-f", args.key, "-n", "uber-tv-catalog", "catalog.json"], check=True)
+
+    # read back as a guide would
+    with tempfile.TemporaryDirectory() as cache:
+        r = subprocess.run([sys.executable, helper, "catalog", os.path.join(HERE, "catalog.json"), signers, "0", cache], capture_output=True, text=True)
+        res = json.loads(r.stdout.strip().splitlines()[-1])
+    if not res.get("ok"):
+        sys.exit("the guide doesn't accept it: " + res.get("error", "?"))
+    print("signed: %d apps, %d pulled, checked with the guide's key" % (len(res["catalog"]["apps"]), len(revoked)))
+
+
+if __name__ == "__main__":
+    main()

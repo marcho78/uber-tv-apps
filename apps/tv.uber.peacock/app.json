@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.peacock",
+  "name": "Peacock",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "NBC series, movies, news and sports. Opens Peacock full screen; you sign in there.",
+  "color": "#16161d",
+  "launch": {
+    "web": "https://www.peacocktv.com/watch/home"
+  },
+  "permissions": {
+    "web": [
+      "peacocktv.com"
+    ]
+  }
+}

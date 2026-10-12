@@ -1,0 +1,229 @@
+{
+ "apps": [
+  {
+   "author": "Uber TV",
+   "color": "#1d1d1f",
+   "description": "Apple's series and movies. Opens tv.apple.com full screen; you sign in there.",
+   "id": "tv.uber.appletv",
+   "kind": "launcher",
+   "name": "Apple TV",
+   "package": "packages/tv.uber.appletv-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "apple.com"
+    ]
+   },
+   "sha256": "a53760e98d9b22baeb28d10be935aae307e684ae59222a5d309b12ec998e36d3",
+   "size": 315,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#f47521",
+   "description": "Anime series and movies. Opens Crunchyroll full screen; you sign in there.",
+   "id": "tv.uber.crunchyroll",
+   "kind": "launcher",
+   "name": "Crunchyroll",
+   "package": "packages/tv.uber.crunchyroll-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "crunchyroll.com"
+    ]
+   },
+   "sha256": "6b2e0b54feb24dce4ce0a8f1e5f6507b14f4cdf83c01d4d6c81898e0d455ec1a",
+   "size": 318,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#113ccf",
+   "description": "Disney, Pixar, Marvel, Star Wars and National Geographic. Opens Disney+ full screen.",
+   "id": "tv.uber.disneyplus",
+   "kind": "launcher",
+   "name": "Disney+",
+   "package": "packages/tv.uber.disneyplus-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "disneyplus.com"
+    ]
+   },
+   "sha256": "006458062e5d83ea622d0c4aaae0331b237054bef63b5eeede7c818d346f0535",
+   "size": 334,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#002be7",
+   "description": "HBO series, movies and more. Opens HBO Max full screen; you sign in there.",
+   "id": "tv.uber.hbomax",
+   "kind": "launcher",
+   "name": "HBO Max",
+   "package": "packages/tv.uber.hbomax-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "hbomax.com"
+    ]
+   },
+   "sha256": "d24238f153ea93f60a7ae5b8f864fa39d7ee6b4dd4d0b7023fa1695eaa615c2e",
+   "size": 319,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#1ce783",
+   "description": "Series, movies and live TV. Opens Hulu's website full screen; you sign in there.",
+   "id": "tv.uber.hulu",
+   "kind": "launcher",
+   "name": "Hulu",
+   "package": "packages/tv.uber.hulu-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "hulu.com"
+    ]
+   },
+   "sha256": "93075a8416831a6a43edef5a0bd002d307e707683202b4907df2afbd4423f7a0",
+   "size": 326,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#e50914",
+   "description": "Movies and series. Opens Netflix's website full screen; you sign in there.",
+   "id": "tv.uber.netflix",
+   "kind": "launcher",
+   "name": "Netflix",
+   "package": "packages/tv.uber.netflix-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "netflix.com"
+    ]
+   },
+   "sha256": "30f192b18b2f019c4848cdfd5fbf2bdc7179f618de51e466b2eed8831410cd39",
+   "size": 322,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#0064ff",
+   "description": "CBS, Paramount movies and live sports. Opens Paramount+ full screen.",
+   "id": "tv.uber.paramountplus",
+   "kind": "launcher",
+   "name": "Paramount+",
+   "package": "packages/tv.uber.paramountplus-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "paramountplus.com"
+    ]
+   },
+   "sha256": "7fb3362e93275ff36aea7435a94afc7e82f5680ba4f7bde343f3ef0ccd12b808",
+   "size": 319,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#16161d",
+   "description": "NBC series, movies, news and sports. Opens Peacock full screen; you sign in there.",
+   "id": "tv.uber.peacock",
+   "kind": "launcher",
+   "name": "Peacock",
+   "package": "packages/tv.uber.peacock-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "peacocktv.com"
+    ]
+   },
+   "sha256": "07c30c2849eebb833c6a6b8489aa883842128f328dff93ec2f8df7493743729a",
+   "size": 330,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#fff200",
+   "description": "Free live channels and movies, no account needed. Opens Pluto TV full screen.",
+   "id": "tv.uber.plutotv",
+   "kind": "launcher",
+   "name": "Pluto TV",
+   "package": "packages/tv.uber.plutotv-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "pluto.tv"
+    ]
+   },
+   "sha256": "768541382bc064f3075216264cc4fd098336eeca12a147cea9148d9544af6f46",
+   "size": 318,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#1a98ff",
+   "description": "Amazon's movies and series. Opens Prime Video full screen; you sign in there.",
+   "id": "tv.uber.primevideo",
+   "kind": "launcher",
+   "name": "Prime Video",
+   "package": "packages/tv.uber.primevideo-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "primevideo.com"
+    ]
+   },
+   "sha256": "2a8246e53e0ec6b7f678ceb8ad08ad0fb3d66a83c2a01189b9e09ff83e37337a",
+   "size": 324,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#7408ff",
+   "description": "Free movies and series, no account needed. Opens Tubi full screen.",
+   "id": "tv.uber.tubi",
+   "kind": "launcher",
+   "name": "Tubi",
+   "package": "packages/tv.uber.tubi-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "tubitv.com"
+    ]
+   },
+   "sha256": "82fb45a241a8a3f82c2e1d8eb303f13a9e19b9750b6edb466d9ca96c9b3ce9d8",
+   "size": 309,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#9146ff",
+   "description": "Live streams: games, music, talk. Opens Twitch full screen.",
+   "id": "tv.uber.twitch",
+   "kind": "launcher",
+   "name": "Twitch",
+   "package": "packages/tv.uber.twitch-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "twitch.tv"
+    ]
+   },
+   "sha256": "a40cbe19cba8b00ec86741874ae40304f667ffca37017c015aa7a0e8e19fc330",
+   "size": 304,
+   "version": "1.0.1"
+  },
+  {
+   "author": "Uber TV",
+   "color": "#ff0033",
+   "description": "Live TV channels from YouTube. Opens tv.youtube.com full screen; you sign in there.",
+   "id": "tv.uber.youtubetv",
+   "kind": "launcher",
+   "name": "YouTube TV",
+   "package": "packages/tv.uber.youtubetv-1.0.1.tar.gz",
+   "permissions": {
+    "web": [
+     "youtube.com"
+    ]
+   },
+   "sha256": "07b28471abc726825eda0a5f808560a103131014e42809938beb73279f62d314",
+   "size": 318,
+   "version": "1.0.1"
+  }
+ ],
+ "format": 1,
+ "name": "The Uber TV catalog",
+ "revoked": [],
+ "updated": 1791752292
+}

@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.tubi",
+  "name": "Tubi",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Free movies and series, no account needed. Opens Tubi full screen.",
+  "color": "#7408ff",
+  "launch": {
+    "web": "https://tubitv.com/home"
+  },
+  "permissions": {
+    "web": [
+      "tubitv.com"
+    ]
+  }
+}

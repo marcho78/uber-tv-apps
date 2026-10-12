@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.youtubetv",
+  "name": "YouTube TV",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Live TV channels from YouTube. Opens tv.youtube.com full screen; you sign in there.",
+  "color": "#ff0033",
+  "launch": {
+    "web": "https://tv.youtube.com/"
+  },
+  "permissions": {
+    "web": [
+      "youtube.com"
+    ]
+  }
+}

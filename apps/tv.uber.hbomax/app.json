@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.hbomax",
+  "name": "HBO Max",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "HBO series, movies and more. Opens HBO Max full screen; you sign in there.",
+  "color": "#002be7",
+  "launch": {
+    "web": "https://play.hbomax.com/"
+  },
+  "permissions": {
+    "web": [
+      "hbomax.com"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.appletv",
+  "name": "Apple TV",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Apple's series and movies. Opens tv.apple.com full screen; you sign in there.",
+  "color": "#1d1d1f",
+  "launch": {
+    "web": "https://tv.apple.com/"
+  },
+  "permissions": {
+    "web": [
+      "apple.com"
+    ]
+  }
+}

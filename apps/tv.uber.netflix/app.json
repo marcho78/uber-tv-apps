@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.netflix",
+  "name": "Netflix",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Movies and series. Opens Netflix's website full screen; you sign in there.",
+  "color": "#e50914",
+  "launch": {
+    "web": "https://www.netflix.com/browse"
+  },
+  "permissions": {
+    "web": [
+      "netflix.com"
+    ]
+  }
+}

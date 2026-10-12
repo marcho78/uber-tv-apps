@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.twitch",
+  "name": "Twitch",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Live streams: games, music, talk. Opens Twitch full screen.",
+  "color": "#9146ff",
+  "launch": {
+    "web": "https://www.twitch.tv/"
+  },
+  "permissions": {
+    "web": [
+      "twitch.tv"
+    ]
+  }
+}

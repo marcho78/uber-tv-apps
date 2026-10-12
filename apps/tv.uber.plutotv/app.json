@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.plutotv",
+  "name": "Pluto TV",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Free live channels and movies, no account needed. Opens Pluto TV full screen.",
+  "color": "#fff200",
+  "launch": {
+    "web": "https://pluto.tv/live-tv"
+  },
+  "permissions": {
+    "web": [
+      "pluto.tv"
+    ]
+  }
+}

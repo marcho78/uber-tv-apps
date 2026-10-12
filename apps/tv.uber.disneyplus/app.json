@@ -1,0 +1,18 @@
+{
+  "id": "tv.uber.disneyplus",
+  "name": "Disney+",
+  "version": "1.0.1",
+  "api": 1,
+  "author": "Uber TV",
+  "kind": "launcher",
+  "description": "Disney, Pixar, Marvel, Star Wars and National Geographic. Opens Disney+ full screen.",
+  "color": "#113ccf",
+  "launch": {
+    "web": "https://www.disneyplus.com/home"
+  },
+  "permissions": {
+    "web": [
+      "disneyplus.com"
+    ]
+  }
+}
