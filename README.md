@@ -1,6 +1,6 @@
 # The Uber TV catalog
 
-The apps the Program Guide offers under **Settings → Apps → Get apps**, signed
+The apps Uber TV offers under **Settings → Apps → Get apps**, signed
 with the catalog's key. It holds **Uber TV's own apps only** and takes no
 submissions: nobody here reviews, or answers for, apps made by others. Those
 will come from sources of their own, each signed with its maker's key, that a
